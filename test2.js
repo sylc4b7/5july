@@ -145,16 +145,13 @@ const library = {
   
   function searchBooks(keyword) {
     console.log(`搜索"${keyword}"結果：`);
-    
-    AllBooks = Object.values(library).flat(); // Flatten the library object to get all books
-    for (const book of AllBooks) {
-      // Check if the book name contains the keyword
-      if (book.includes(keyword)) {
-        // Print the book name
-        console.log(`- ${book}`);
-      }
+  
+    const allBooks = Object.values(library).flat(); // Flatten the library object to get all books
+    const matchingBooks = allBooks.filter((book) => book.includes(keyword)); // Find all books containing the keyword
+  
+    for (const book of matchingBooks) {
+      console.log(`- ${book}`); // Print each matching book
     }
-    
   }
   
 
