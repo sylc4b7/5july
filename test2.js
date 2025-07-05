@@ -4,7 +4,7 @@
 
 const library = {
     fiction: ["百年孤獨", "小王子", "哈利波特"],
-    science: ["時間簡史", "物種起源", "人類簡史", "黑客與畫家"],
+    science: ["時間簡史", "物種起源", "人類簡史"],
     history: ["史記", "資治通鑑", "明朝"],
   };
   
@@ -142,7 +142,39 @@ const library = {
   // 判斷書籍名稱是否包含關鍵詞
   // ==============================================
   
-  // 題目 d：for...of 迴圈 - 書籍搜尋功能
-  function searchBooks(keyword) {}
   
+  function searchBooks(keyword) {
+    console.log(`搜索"${keyword}"結果：`);
+    
+    AllBooks = Object.values(library).flat(); // Flatten the library object to get all books
+    for (const book of AllBooks) {
+      // Check if the book name contains the keyword
+      if (book.includes(keyword)) {
+        // Print the book name
+        console.log(`- ${book}`);
+      }
+    }
+    
+  }
+  
+
+  /*
+  // 題目 d：for...of 迴圈 - 書籍搜尋功能
+  function searchBooks(keyword) {
+    console.log(`搜索"${keyword}"結果：`);
+  
+    // Iterate over each category in the library object
+    for (const category in library) {
+      // Iterate over each book in the current category
+      for (const book of library[category]) {
+        // Check if the book name contains the keyword
+        if (book.includes(keyword)) {
+          // Print the book name
+          console.log(`- ${book}`);
+        }
+      }
+    }
+  }
+  */
+  searchBooks("簡史");
   // ==============================================
