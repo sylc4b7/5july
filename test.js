@@ -22,8 +22,16 @@ console.log(tempArray.slice(0, 2)); // Output: [1, 2]
 console.log(typeof tempNumber); // Output: "number"
 
 const sumArray = [1 + 2 + 3 + 4 + "5"];
+// duplicate the line 
+const sum1Array = [1,  2,  3,  4, "5"];
 // console out ..after sum the item in sumArray
 console.log(sumArray[0]); // Output: "105" (due to string concatenation)
+
+
+let count = 100 
+const add = () => count++
+const min = () => count--
+console.log(add()); // Output: 1
 
 
 
